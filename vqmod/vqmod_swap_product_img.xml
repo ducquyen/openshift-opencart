@@ -1,0 +1,206 @@
+<modification>
+	<id>VQMod Pavo Swap Product Image</id>
+	<version>1.0.0</version>
+	<vqmver>2.3.0</vqmver>
+	<author>pavothemes.com</author>
+	<file name="catalog/controller/product/category.php">
+		<operation error="abort">
+			<search position="before"><![CDATA[
+					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+				]]>
+			</search>
+			<add><![CDATA[
+					$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+					if(isset($product_images) && !empty($product_images)) {
+						$thumb2 = $this->model_tool_image->resize($product_images[0]['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+					}
+				]]>
+			</add>
+		</operation>
+		<operation error="abort">
+			<search position="before"><![CDATA['thumb'       => $image,]]></search>
+			<add><![CDATA['thumb2'      => isset($thumb2)?$thumb2:'',]]></add>
+		</operation>
+	</file>
+	<!-- Compare -->
+	<file name="catalog/controller/product/compare.php">
+		<operation error="abort">
+			<search position="before"><![CDATA[
+					$image = $this->model_tool_image->resize($product_info['image'], $this->config->get('config_image_compare_width'), $this->config->get('config_image_compare_height'));
+				]]>
+			</search>
+			<add><![CDATA[
+					$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+					if(isset($product_images) && !empty($product_images)) {
+						$thumb2 = $this->model_tool_image->resize($product_images[0]['image'], $this->config->get('config_image_compare_width'), $this->config->get('config_image_compare_height'));
+					}
+				]]>
+			</add>
+		</operation>
+		<operation error="abort">
+			<search position="before"><![CDATA['thumb'        => $image,]]></search>
+			<add><![CDATA['thumb2'      => isset($thumb2)?$thumb2:'',]]></add>
+		</operation>
+	</file>
+	<!-- manufacturer -->
+	<file name="catalog/controller/product/manufacturer.php">
+		<operation error="abort">
+			<search position="before"><![CDATA[
+					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+				]]>
+			</search>
+			<add><![CDATA[
+					$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+					if(isset($product_images) && !empty($product_images)) {
+						$thumb2 = $this->model_tool_image->resize($product_images[0]['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+					}
+				]]>
+			</add>
+		</operation>
+		<operation error="abort">
+			<search position="before"><![CDATA['thumb'       => $image,]]></search>
+			<add><![CDATA['thumb2'      => isset($thumb2)?$thumb2:'',]]></add>
+		</operation>
+	</file>
+	<!-- Search Product -->
+	<file name="catalog/controller/product/search.php">
+		<operation error="abort">
+			<search position="before"><![CDATA[
+					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+				]]>
+			</search>
+			<add><![CDATA[
+					$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+					if(isset($product_images) && !empty($product_images)) {
+						$thumb2 = $this->model_tool_image->resize($product_images[0]['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+					}
+				]]>
+			</add>
+		</operation>
+		<operation error="abort">
+			<search position="before"><![CDATA['thumb'       => $image,]]></search>
+			<add><![CDATA['thumb2'      => isset($thumb2)?$thumb2:'',]]></add>
+		</operation>
+	</file>
+	<!-- Special Product -->
+	<file name="catalog/controller/product/special.php">
+		<operation error="abort">
+			<search position="before"><![CDATA[
+					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+				]]>
+			</search>
+			<add><![CDATA[
+					$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+					if(isset($product_images) && !empty($product_images)) {
+						$thumb2 = $this->model_tool_image->resize($product_images[0]['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+					}
+				]]>
+			</add>
+		</operation>
+		<operation error="abort">
+			<search position="before"><![CDATA['thumb'       => $image,]]></search>
+			<add><![CDATA['thumb2'      => isset($thumb2)?$thumb2:'',]]></add>
+		</operation>
+	</file>
+	<!-- Related Product -->
+	<file name="catalog/controller/product/product.php">
+		<operation error="abort">
+			<search position="before"><![CDATA[
+					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_related_width'), $this->config->get('config_image_related_height'));
+				]]>
+			</search>
+			<add><![CDATA[
+					$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+					if(isset($product_images) && !empty($product_images)) {
+						$thumb2 = $this->model_tool_image->resize($product_images[0]['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+					}
+				]]>
+			</add>
+		</operation>
+		<operation error="abort">
+			<search position="before"><![CDATA['thumb'   	 => $image,]]></search>
+			<add><![CDATA['thumb2'      => isset($thumb2)?$thumb2:'',]]></add>
+		</operation>
+	</file>
+	<!-- Module bestseller Product -->
+	<file name="catalog/controller/module/bestseller.php">
+		<operation error="abort">
+			<search position="before"><![CDATA[
+					$image = $this->model_tool_image->resize($result['image'], $setting['image_width'], $setting['image_height']);
+				]]>
+			</search>
+			<add><![CDATA[
+					$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+					if(isset($product_images) && !empty($product_images)) {
+						$thumb2 = $this->model_tool_image->resize($product_images[0]['image'], $setting['image_width'], $setting['image_height']);
+					}
+				]]>
+			</add>
+		</operation>
+		<operation error="abort">
+			<search position="before"><![CDATA['thumb'   	 => $image,]]></search>
+			<add><![CDATA['thumb2'      => isset($thumb2)?$thumb2:'',]]></add>
+		</operation>
+	</file>
+	<!-- Module featured Product -->
+	<file name="catalog/controller/module/featured.php">
+		<operation error="abort">
+			<search position="before"><![CDATA[
+					$image = $this->model_tool_image->resize($product_info['image'], $setting['image_width'], $setting['image_height']);
+				]]>
+			</search>
+			<add><![CDATA[
+					$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+					if(isset($product_images) && !empty($product_images)) {
+						$thumb2 = $this->model_tool_image->resize($product_images[0]['image'], $setting['image_width'], $setting['image_height']);
+					}
+				]]>
+			</add>
+		</operation>
+		<operation error="abort">
+			<search position="before"><![CDATA['thumb'   	 => $image,]]></search>
+			<add><![CDATA['thumb2'      => isset($thumb2)?$thumb2:'',]]></add>
+		</operation>
+	</file>
+	<!-- Module latest Product -->
+	<file name="catalog/controller/module/latest.php">
+		<operation error="abort">
+			<search position="before"><![CDATA[
+					$image = $this->model_tool_image->resize($result['image'], $setting['image_width'], $setting['image_height']);
+				]]>
+			</search>
+			<add><![CDATA[
+					$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+					if(isset($product_images) && !empty($product_images)) {
+						$thumb2 = $this->model_tool_image->resize($product_images[0]['image'], $setting['image_width'], $setting['image_height']);
+					}
+				]]>
+			</add>
+		</operation>
+		<operation error="abort">
+			<search position="before"><![CDATA['thumb'   	 => $image,]]></search>
+			<add><![CDATA['thumb2'      => isset($thumb2)?$thumb2:'',]]></add>
+		</operation>
+	</file>
+
+	<!-- Module special Product -->
+	<file name="catalog/controller/module/special.php">
+		<operation error="abort">
+			<search position="before"><![CDATA[
+					$image = $this->model_tool_image->resize($result['image'], $setting['image_width'], $setting['image_height']);
+				]]>
+			</search>
+			<add><![CDATA[
+					$product_images = $this->model_catalog_product->getProductImages($result['product_id']);
+					if(isset($product_images) && !empty($product_images)) {
+						$thumb2 = $this->model_tool_image->resize($product_images[0]['image'], $setting['image_width'], $setting['image_height']);
+					}
+				]]>
+			</add>
+		</operation>
+		<operation error="abort">
+			<search position="before"><![CDATA['thumb'   	 => $image,]]></search>
+			<add><![CDATA['thumb2'      => isset($thumb2)?$thumb2:'',]]></add>
+		</operation>
+	</file>
+</modification>
